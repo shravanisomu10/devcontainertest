@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Insert JSON Data</title>
+</head>
+<body>
+<?php 
+
+$josndata = '{
+"student":{ "name":"Harry", "address":"United State" }
+}';  
+
+
+$conn = new mysqli('localhost', 'root', 'Cybe$c0m888', 'myguests');
+
+// Insert data Query
+$sql = "INSERT INTO myguests ( name, jsondata )
+VALUES ('Harry', '$josndata')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Insert your JSON record successfully";
+} 
+?>
+</body>
+</html>
